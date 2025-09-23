@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="My first webpage about sport">
+  <meta name="keywords" content="sport, hobby, fun">
+  <meta name="author" content="Diana.Kostiuk">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Sport</title>
+  <link rel="icon" type="image/png" href="./image/favicon.png">
+
+  <!-- Material Design Lite -->
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <style>
+    body {
+      background-color: #fbf6ff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .content {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .content img {
+      max-width: 600px;
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+
+    .description {
+      font-size: 18px;
+      color: #555;
+      margin-top: 15px;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #e3d8f2;
+    }
+
+    header {
+      background-color: #8994b9;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    h2.mdl-card__title-text {
+      width: 100%;
+    }
+
+    /* Контейнер для карток */
+    .cards-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 20px;
+      flex-wrap: wrap;
+      /* дозволяє переноситись на новий ряд */
+    }
+
+    .demo-card-wide.mdl-card {
+      flex: 1 1 45%;
+      /* адаптивна ширина */
+      min-width: 280px;
+      /* мінімальна ширина на мобільному */
+    }
+
+    .demo-card-wide>.mdl-card__title {
+      color: #fff;
+      background: #8994b9;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Навігаційне меню -->
+  <header>
+    <nav>
+      <a href="/Unit1/Final/index.html">Home</a>
+      <a href="#">Interesting</a>
+      <a href="#">My Sport</a>
+      <a href="#">About Us</a>
+    </nav>
+  </header>
+
+<div class="cards-container">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Баскетбол -->
+  <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+    <h2 class="mdl-card__title-text">Basketball</h2>
+    <div class="mdl-card__title">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png" />
+    </div>
+    <div class="mdl-card__supporting-text">
+      Basketball is one of the most popular team sports in the world.
+      It develops coordination, speed, and teamwork skills.
+      <br><br>
+      <a href="https://en.wikipedia.org/wiki/Basketball" target="_blank">Read more →</a>
+    </div>
+  </div>
+
+  <!-- Футбол -->
+  <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+    <h2 class="mdl-card__title-text">Football</h2>
+    <div class="mdl-card__title">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png" />
+    </div>
+    <div class="mdl-card__supporting-text">
+      Football (soccer) is the most popular sport worldwide, uniting millions of fans.
+      It improves endurance and strategic thinking.
+      <br><br>
+      <a href="https://en.wikipedia.org/wiki/Football" target="_blank">Read more →</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
