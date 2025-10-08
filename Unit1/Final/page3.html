@@ -2,49 +2,38 @@
 <html lang="en-ca">
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="My first webpage about sport">
-  <meta name="keywords" content="sport, hobby, fun">
+  <meta name="description" content="My personal sport page">
+  <meta name="keywords" content="sport, hobby, personal">
   <meta name="author" content="Diana.Kostiuk">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>World Sport</title>
-  <link rel="icon" type="image/png" href="./image/favicon.png">
+  <title>My Sport</title>
 
   <!-- Material Design Lite -->
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="icon" type="image/png" href="favicons/faviconл.png">
 
   <style>
     body {
-      background-color: #fbf6ff;
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fdf9ff;
     }
 
-    .content {
-      text-align: center;
-      padding: 50px 20px;
-    }
-
-    .content img {
-      max-width: 600px;
-      width: 100%;
-      height: auto;
-      margin-top: 20px;
-      border-radius: 10px;
-    }
-
-    .description {
-      font-size: 18px;
-      color: #555;
-      margin-top: 15px;
+    /* Шапка з пошуком */
+    header {
+      background-color: #8994b9;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
     nav a {
-      margin: 0 10px;
+      margin: 0 12px;
       text-decoration: none;
-      color: #333;
+      color: #fff;
       font-weight: bold;
     }
 
@@ -52,86 +41,176 @@
       color: #e3d8f2;
     }
 
-    header {
-      background-color: #8994b9;
-      padding: 10px 0;
+    .search-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .search-container input {
+      padding: 6px 12px;
+      font-size: 16px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      outline: none;
+      width: 200px;
+      transition: 0.3s;
+    }
+
+    .search-container input:focus {
+      width: 250px;
+      border-color: #555;
+    }
+
+    .search-container button {
+      background-color: #fff;
+      border: none;
+      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+
+    .search-container button:hover {
+      background-color: #ddd;
+    }
+
+    /* Hero banner */
+    .hero {
+      background-image: url("https://images.unsplash.com/photo-1521412644187-c49fa049e84d");
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+      font-size: 2.5em;
+      font-weight: bold;
+    }
+
+    /* Content box */
+    .content {
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-top: -60px;
+      position: relative;
+    }
+
+    .content h2 {
+      color: #5e4b8b;
+    }
+
+    /* Gallery */
+    .gallery {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      width: calc(33% - 20px);
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .video {
+      margin-top: 30px;
       text-align: center;
     }
 
-    h2.mdl-card__title-text {
+    iframe {
       width: 100%;
-    }
-
-    /* Контейнер для карток */
-    .cards-container {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 20px;
-      flex-wrap: wrap;
-      /* дозволяє переноситись на новий ряд */
-    }
-
-    .demo-card-wide.mdl-card {
-      flex: 1 1 45%;
-      /* адаптивна ширина */
-      min-width: 280px;
-      /* мінімальна ширина на мобільному */
-    }
-
-    .demo-card-wide>.mdl-card__title {
-      color: #fff;
-      background: #8994b9;
+      max-width: 600px;
+      height: 350px;
+      border: none;
+      border-radius: 10px;
     }
   </style>
-  <!-- Expandable Textfield -->
-  <form action="#">
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-      <label class="mdl-button mdl-js-button mdl-button--icon" for="userInput">
-        <i class="material-icons">search</i>
-      </label>
-      <div class="mdl-textfield__expandable-holder">
-        <input class="mdl-textfield__input" type="text" id="userInput">
-        <label class="mdl-textfield__label" for="userInput">Search...</label>
-        <!-- FAB search button -->
-        <button id="searchButton" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
-          <i class="material-icons">search</i>
-        </button>
-
-        <button id="clearButton" class="mdl-button mdl-js-button">Clear</button>
-      </div>
-      <!-- JavaScript -->
-      <script>
-        const button = document.getElementById('searchButton');
-        const input = document.getElementById('userInput');
-
-        button.addEventListener('click', function () {
-          const q = (input.value || '').trim();
-          if (q) {
-            const url = 'https://www.google.com/search?q=' + encodeURIComponent(q);
-            window.open(url, '_blank');
-          }
-        });
-
-        const clearButton = document.getElementById('clearButton');
-        clearButton.addEventListener('click', function () {
-          input.value = '';
-        });
-
-        document.getElementById('clearButton').addEventListener('click', () => {
-          document.getElementById('userInput').value = '';
-          document.getElementById('userInput').focus();
-        });
-      </script>
 </head>
 <body>
 
-  <!-- Навігаційне меню -->
+  <!-- Header з пошуком -->
   <header>
     <nav>
-          <a href="/Unit1/Final/index.html">Home</a>
-          <a href="/Unit1/Final/page2.html">sport</a>
-          <a href="/Unit1/Final/page3.html">My Sport</a>
-          <a href="/Unit1/Final/page4.html">About Us</a>
+      <a href="/Unit1/Final/index.html">Home</a>
+      <a href="/Unit1/Final/page2.html">All Sport</a>
+      <a href="/Unit1/Final/page3.html">My Sport</a>
+      <a href="/Unit1/Final/page5.html">hobby</a>
     </nav>
+
+    <div class="search-container">
+      <input type="text" id="userInput" placeholder="Search...">
+      <button id="searchButton"><i class="material-icons">search</i></button>
+      <button id="clearButton">Clear</button>
+    </div>
   </header>
+
+  <!-- Hero -->
+  <div class="hero">
+    My Favorite Sport
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+    <h2>Why I love my sport</h2>
+    <p>
+      I like to do sports because it brings me pleasure and strength, or when you need to work hard to achieve success.
+      I will show you the sports I have been involved in and which sport I give the most importance to.
+    </p>
+
+    <!-- Gallery -->
+    <div class="gallery">
+      <img src="images/photo_ly.jpeg" alt="sport1">
+      <p>
+        The first sport I tried at the age of 4 was figure skating. Before that, there were other sports, but they were minor. I
+        was engaged in figure skating for 5 years, but when I was 9 years old, I became interested in acrobatics and that was
+        the end of my figure skating career. I had a 2nd degree master of sports in Ukraine, but unfortunately, this line ended
+        and when I came to Canada, I resumed figure skating, but it didn't end very positively because I got injured and had
+        knee surgery. I am still interested in this sport, but at the moment my knees are not very reliable.
+      </p>
+      
+      <img src="images/photo_hr.jpeg" alt="sport2">
+      <p>
+      Gymnastics I found this sport when I went to a gymnastics class, that was the beginning of everything, then I got
+      interested in acrobatics in a club and I did acrobatics 4 months after that, this club opened a new sport, aerial
+      gymnastics, I became very interested in it and now I do it. I spent 6 years of my life on gymnastics, but unfortunately
+      I wanted to try something new, so I decided to go dancing.
+      </p>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj7JpO0yJv02kDGocUok2S2Be1aHgkTHXtYA&s" alt="sport3">
+      <p>
+    I've known dancing for a long time, but it never seemed to fade. When I was 2 years old, I was dancing hip-hop style, it
+    was just for fun. But now, after I started liking K-pop music, I started to really watch them and their movements,
+    animate and repeat them, and I liked it, so I decided to go dancing. I like that I can control my body and how smoothly
+    or quickly I can dance.
+      </p>
+    </div>
+
+  <!-- JS для пошуку -->
+  <script>
+    const button = document.getElementById('searchButton');
+    const input = document.getElementById('userInput');
+    const clearButton = document.getElementById('clearButton');
+
+    button.addEventListener('click', function () {
+      const q = (input.value || '').trim();
+      if (q) {
+        const url = 'https://www.google.com/search?q=' + encodeURIComponent(q);
+        window.open(url, '_blank');
+      }
+    });
+
+    clearButton.addEventListener('click', function () {
+      input.value = '';
+      input.focus();
+    });
+  </script>
+
+</body>
+</html>

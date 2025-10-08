@@ -7,7 +7,7 @@
   <meta name="author" content="Diana.Kostiuk">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>World Sport</title>
-  <link rel="icon" type="image/png" href="./image/favicon.png">
+    <link rel="icon" type="image/png" href="favicons/faviconл.png">
 
   <!-- Material Design Lite -->
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
@@ -22,29 +22,19 @@
       padding: 0;
     }
 
-    .content {
-      text-align: center;
-      padding: 50px 20px;
-    }
-
-    .content img {
-      max-width: 600px;
-      width: 100%;
-      height: auto;
-      margin-top: 20px;
-      border-radius: 10px;
-    }
-
-    .description {
-      font-size: 18px;
-      color: #555;
-      margin-top: 15px;
+    /* Шапка */
+    header {
+      background-color: #8994b9;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
     nav a {
       margin: 0 10px;
       text-decoration: none;
-      color: #333;
+      color: #fff;
       font-weight: bold;
     }
 
@@ -52,163 +42,235 @@
       color: #e3d8f2;
     }
 
-    header {
-      background-color: #8994b9;
-      padding: 10px 0;
-      text-align: center;
-    }
-
-    h2.mdl-card__title-text {
-      width: 100%;
-    }
-
-    /* Контейнер для карток */
-    .cards-container {
+    /* Пошук */
+    .search-container {
       display: flex;
-      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .search-container input {
+      padding: 6px 12px;
+      font-size: 16px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      outline: none;
+      width: 200px;
+      transition: 0.3s;
+    }
+
+    .search-container input:focus {
+      width: 250px;
+      border-color: #555;
+    }
+
+    .search-container button {
+      background-color: #fff;
+      border: none;
+      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+
+    .search-container button:hover {
+      background-color: #ddd;
+    }
+
+    /* Картки */
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 20px;
       padding: 20px;
-      flex-wrap: wrap;
-      /* дозволяє переноситись на новий ряд */
     }
 
     .demo-card-wide.mdl-card {
-      flex: 1 1 45%;
-      /* адаптивна ширина */
-      min-width: 280px;
-      /* мінімальна ширина на мобільному */
+      max-width: 350px;
+      margin: auto;
     }
 
     .demo-card-wide>.mdl-card__title {
-      color: #fff;
       background: #8994b9;
     }
+
+    /* Всі картинки квадратні та однакового розміру */
+    .demo-card-wide img {
+      width: 100%;
+      height: 250px;
+      /* однакова висота */
+      object-fit: cover;
+      /* обрізає зайве, зберігає пропорції */
+      border-radius: 10px;
+    }
+
+    .mdl-card__supporting-text a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .mdl-card__supporting-text a:hover {
+      color: #8994b9;
+    }
   </style>
-    <!-- Expandable Textfield -->
-    <form action="#">
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-        <label class="mdl-button mdl-js-button mdl-button--icon" for="userInput">
-          <i class="material-icons">search</i>
-        </label>
-        <div class="mdl-textfield__expandable-holder">
-          <input class="mdl-textfield__input" type="text" id="userInput">
-          <label class="mdl-textfield__label" for="userInput">Search...</label>
-          <!-- FAB search button -->
-          <button id="searchButton" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
-            <i class="material-icons">search</i>
-          </button>
-    
-          <button id="clearButton" class="mdl-button mdl-js-button">Clear</button>
-        </div>
-        <!-- JavaScript -->
-        <script>
-          const button = document.getElementById('searchButton');
-          const input = document.getElementById('userInput');
-
-          button.addEventListener('click', function () {
-            const q = (input.value || '').trim();
-            if (q) {
-              const url = 'https://www.google.com/search?q=' + encodeURIComponent(q);
-              window.open(url, '_blank');
-            }
-          });
-
-          const clearButton = document.getElementById('clearButton');
-          clearButton.addEventListener('click', function () {
-            input.value = '';
-          });
-
-          document.getElementById('clearButton').addEventListener('click', () => {
-            document.getElementById('userInput').value = '';
-            document.getElementById('userInput').focus();
-          });
-        </script>
 </head>
 <body>
 
-  <!-- Навігаційне меню -->
   <header>
     <nav>
       <a href="/Unit1/Final/index.html">Home</a>
-      <a href="/Unit1/Final/page2.html">sport</a>
+      <a href="/Unit1/Final/page2.html">All Sport</a>
       <a href="/Unit1/Final/page3.html">My Sport</a>
-      <a href="/Unit1/Final/page4.html">About Us</a>
+      <a href="/Unit1/Final/page5.html">hobby</a>
     </nav>
+  
+    <div class="search-container-wrapper" style="display:flex; align-items:center; gap:20px;">
+      <!-- Ліва пояснювальна частина -->
+      <div class="search-text" style="color:#fff; font-weight:bold;">
+        If you want to know more about sports, you can search here →
+      </div>
+  
+      <!-- Поле пошуку з кнопками -->
+      <div class="search-container" style="display:flex; align-items:center; gap:10px;">
+        <input type="text" id="userInput" placeholder="Search...">
+        <button id="searchButton"><i class="material-icons">search</i></button>
+        <button id="clearButton">Clear</button>
+      </div>
+    </div>
   </header>
-<div class="cards-container">
-  <link rel="stylesheet" href="css/style.css">
-  <!-- Баскетбол -->
-  <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-    <h2 class="mdl-card__title-text">Basketball</h2>
-    <div class="mdl-card__title">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png" />
-    </div>
-    <div class="mdl-card__supporting-text">
-      Basketball is one of the most popular team sports in the world.
-      It develops coordination, speed, and teamwork skills.
-      <br><br>
-      <a href="https://en.wikipedia.org/wiki/Basketball" target="_blank">Read more →</a>
-    </div>
-  </div>
 
-  <!-- Футбол -->
-  <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-    <h2 class="mdl-card__title-text">Football</h2>
-    <div class="mdl-card__title">
-      <img src="https://avatarko.ru/img/kartinka/14/sport_football_13426.jpg" />
-    </div>
-    <div class="mdl-card__supporting-text">
-      Football (soccer) is the most popular sport worldwide, uniting millions of fans.
-      It improves endurance and strategic thinking.
-      <br><br>
-      <a href="https://en.wikipedia.org/wiki/Football" target="_blank">Read more →</a>
-    </div>
-  </div>
-</div>
-<div class="cards-container">
-  <link rel="stylesheet" href="css/style.css">
-  <!-- Volleyball -->
-  <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-    <h2 class="mdl-card__title-text">Volleyball</h2>
-    <div class="mdl-card__title">
-      <img src="https://www.fivb.com/wp-content/uploads/2024/03/rules1.jpg" />
-    </div>
-    <div class="mdl-card__supporting-text">
-      Volleyball is a team sport played on a court divided by a net, where two teams attempt to pass the ball to the
-      opponent's court so that it touches the floor, or to force a fault from the opponent.
-      <br><br>
-      <a href="https://en.wikipedia.org/wiki/Volleyball" target="_blank">Read more →</a>
-    </div>
-  </div>
-  </div>
+
+  <!-- Картки -->
   <div class="cards-container">
-    <link rel="stylesheet" href="css/style.css">
-    <!-- бандметон -->
+    <!-- Basketball -->
+    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+      <h2 class="mdl-card__title-text">Basketball</h2>
+      <div class="mdl-card__title">
+        <img src="https://sportgoroda.ru/image/catalog/sport-img/proverka-ekipirovki-i-igrovogo-polya-pered-matchem.webp" />
+      </div>
+      <div class="mdl-card__supporting-text">
+        Basketball is one of the most popular team sports in the world.
+        <br><br>
+        <a href="https://en.wikipedia.org/wiki/Basketball" target="_blank">Read more →</a>
+      </div>
+    </div>
+
+    <!-- Football -->
+    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+      <h2 class="mdl-card__title-text">soccer</h2>
+      <div class="mdl-card__title">
+        <img src="https://avatarko.ru/img/kartinka/14/sport_football_13426.jpg" />
+      </div>
+      <div class="mdl-card__supporting-text">
+        soccer is the most popular sport worldwide.
+        <br><br>
+        <a href="https://en.wikipedia.org/wiki/Football" target="_blank">Read more →</a>
+      </div>
+    </div>
+
+    <!-- Volleyball -->
+    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+      <h2 class="mdl-card__title-text">Volleyball</h2>
+      <div class="mdl-card__title">
+        <img src="https://www.fivb.com/wp-content/uploads/2024/03/rules1.jpg" />
+      </div>
+      <div class="mdl-card__supporting-text">
+        Volleyball is a team sport played on a court divided by a net.
+        <br><br>
+        <a href="https://en.wikipedia.org/wiki/Volleyball" target="_blank">Read more →</a>
+      </div>
+    </div>
+
+    <!-- Badminton -->
     <div class="demo-card-wide mdl-card mdl-shadow--2dp">
       <h2 class="mdl-card__title-text">Badminton</h2>
       <div class="mdl-card__title">
-        <img src="https://www.nure.info/uploads/posts/2017-06/1498255465_sportivnyy-klub-sportivnye-sekcii-v-hnure-sekciya-badminton.jpg" />
+        <img
+          src="https://www.nure.info/uploads/posts/2017-06/1498255465_sportivnyy-klub-sportivnye-sekcii-v-hnure-sekciya-badminton.jpg" />
       </div>
       <div class="mdl-card__supporting-text">
-        Badminton is a racket and shuttlecock sport played between two players (singles) or two teams of two (doubles).
+        Badminton is a racket and shuttlecock sport.
         <br><br>
         <a href="https://en.wikipedia.org/wiki/Badminton" target="_blank">Read more →</a>
       </div>
     </div>
-    </div>
-    <div class="cards-container">
-      <link rel="stylesheet" href="css/style.css">
-      <!-- football -->
-      <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-        <h2 class="mdl-card__title-text">American football</h2>
-        <div class="mdl-card__title">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/2004_Northeastern-Navy_Game_Quintin_Mitchell.jpg" />
-        </div>
-        <div class="mdl-card__supporting-text">
-      American football, referred to simply as football in the United States and Canada and also known as gridiron football,
-     is a team sport played by two teams of eleven players on a rectangular field with goalposts at each end.          <br><br>
-          <a href="https://en.wikipedia.org/wiki/American_football" target="_blank">Read more →</a>
-        </div>
+
+    <!-- American football -->
+    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+      <h2 class="mdl-card__title-text">American football</h2>
+      <div class="mdl-card__title">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/7/7f/2004_Northeastern-Navy_Game_Quintin_Mitchell.jpg" />
       </div>
+      <div class="mdl-card__supporting-text">
+        American football, also known as gridiron, is a team sport played on a rectangular field.
+        <br><br>
+        <a href="https://en.wikipedia.org/wiki/American_football" target="_blank">Read more →</a>
+      </div>
+    </div>
+
+    <!-- Figure skating -->
+    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+      <h2 class="mdl-card__title-text">Figure skating</h2>
+      <div class="mdl-card__title">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSISMlfWHTo-y7txSAf1236ne1peqF7lZ2DQA&s" />
+      </div>
+      <div class="mdl-card__supporting-text">
+        Figure skating is a sport where athletes on skates perform movements and elements on ice, often to music.
+        <br><br>
+        <a href="https://en.wikipedia.org/wiki/Figure_skating" target="_blank">Read more →</a>
+      </div>
+    </div>
+
+    <!-- Athletics -->
+    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+      <h2 class="mdl-card__title-text">Athletics</h2>
+      <div class="mdl-card__title">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2ergv7icBfapEosQkwwLc8K4MsTWxzMfTWw&s" />
+      </div>
+      <div class="mdl-card__supporting-text">
+        Athletics, or track and field, is an Olympic sport that combines running, jumping, throwing, and walking
+        competitions.
+        <br><br>
+        <a href="https://en.wikipedia.org/wiki/Athletics_(baseball)" target="_blank">Read more →</a>
+      </div>
+    </div>
+
+    <!-- Boxing -->
+    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+      <h2 class="mdl-card__title-text">Boxing</h2>
+      <div class="mdl-card__title">
+        <img src="https://img.olympics.com/images/image/private//t_s_w440/f_auto/primary/xhnk9p0lrcfqcdkaqbei" />
+      </div>
+      <div class="mdl-card__supporting-text">
+        Boxing is a contact martial art in which athletes use gloves and fists to strike their opponents in the ring.
+        <br><br>
+        <a href="https://en.wikipedia.org/wiki/Boxing" target="_blank">Read more →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- JS пошуку -->
+  <script>
+    const button = document.getElementById('searchButton');
+    const input = document.getElementById('userInput');
+    const clearButton = document.getElementById('clearButton');
+
+    button.addEventListener('click', function () {
+      const q = (input.value || '').trim();
+      if (q) {
+        const url = 'https://www.google.com/search?q=' + encodeURIComponent(q);
+        window.open(url, '_blank');
+      }
+    });
+
+    clearButton.addEventListener('click', function () {
+      input.value = '';
+      input.focus();
+    });
+  </script>
+
 </body>
 </html>

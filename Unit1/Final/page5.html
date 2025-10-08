@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="My first webpage about sport">
+  <meta name="keywords" content="sport, hobby, fun">
+  <meta name="author" content="Diana.Kostiuk">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Sport</title>
+  <link rel="icon" type="image/png" href="favicons/faviconл.png">
+
+  <!-- Material Design Lite (optional) -->
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <style>
+    body {
+      background-color: #fbf6ff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header */
+    header {
+      background-color: #8994b9;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #e3d8f2;
+    }
+
+    .search-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .search-container input {
+      padding: 6px 12px;
+      font-size: 16px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      outline: none;
+      width: 200px;
+      transition: 0.25s;
+    }
+
+    .search-container input:focus {
+      width: 250px;
+      border-color: #555;
+    }
+
+    .search-container button {
+      background-color: #fff;
+      border: none;
+      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 20px;
+    }
+
+    /* --- GRID: 4 items per row --- */
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card img {
+      display: block;
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card .card-body {
+      padding: 12px;
+      flex: 1;
+      color: #333;
+    }
+
+    .card .card-body a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .card .card-body a:hover {
+      color: #8994b9;
+    }
+
+    /* Responsive */
+    @media (max-width: 800px) {
+      .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .cards-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Hobby section */
+    .hobby-section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .hobby-section h2 {
+      margin-top: 0;
+      color: #8994b9;
+    }
+
+    .hobby-section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin: 20px 0;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="/Unit1/Final/index.html">Home</a>
+      <a href="/Unit1/Final/page2.html">All Sport</a>
+      <a href="/Unit1/Final/page3.html">My Sport</a>
+      <a href="/Unit1/Final/page5.html">Hobby</a>
+    </nav>
+
+    <div style="display:flex; align-items:center; gap:20px;">
+      <div style="font-weight:bold; color:#fff">If you want to know more about sports, you can search here →</div>
+
+      <div class="search-container">
+        <input type="text" id="userInput" placeholder="Search...">
+        <button id="searchButton"><i class="material-icons">search</i></button>
+        <button id="clearButton">Clear</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section style="max-width:1200px; margin:18px auto; padding: 0 20px;">
+      <h2>What is the hobby</h2>
+      <p>A hobby is a regular activity pursued for pleasure and enjoyment during leisure time.</p>
+    </section>
+
+    <!-- Cards -->
+    <div class="cards-container">
+      <!-- card 1 -->
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Two_dancers.jpg/800px-Two_dancers.jpg"
+          alt="Dance">
+        <div class="card-body">
+          <strong>Dance</strong>
+          <p>Dance is an art form consisting of sequences of body movements.</p>
+          <a href="https://en.wikipedia.org/wiki/Dance" target="_blank">Read more →</a>
+        </div>
+      </div>
+      <!-- card 2 -->
+      <div class="card">
+        <img
+          src="https://www.brambleberry.com/on/demandware.static/-/Sites-brambleberry-Library/default/dw0acb37d7/images/articles/art0171-art0190/art0172-candle-recipes-aromatherapy-candles.jpg"
+          alt="Candle making">
+        <div class="card-body">
+          <strong>Candle making</strong>
+          <p>Using wax, wicks and oils to make scented candles.</p>
+          <a href="https://www.classpop.com/magazine/creative-hobbies" target="_blank">Read more →</a>
+        </div>
+      </div>
+      <!-- card 3 -->
+      <div class="card">
+        <img src="https://www.adorama.com/alc/wp-content/uploads/2021/04/photography-camera-learning-feature.jpg"
+          alt="Photography">
+        <div class="card-body">
+          <strong>Photography</strong>
+          <p>The art and practice of creating images by recording light.</p>
+          <a href="https://en.wikipedia.org/wiki/Photography" target="_blank">Read more →</a>
+        </div>
+      </div>
+      <!-- card 4 -->
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPND3Sff-LBrklXXGdgBO4p7s3K80rQQqKQA&s"
+          alt="Drawing">
+        <div class="card-body">
+          <strong>Painting & Drawing</strong>
+          <p>Drawing is a visual art made with pencils, pens, or crayons.</p>
+          <a href="https://en.wikipedia.org/wiki/Drawing" target="_blank">Read more →</a>
+        </div>
+      </div>
+      <!-- card 5 -->
+      <div class="card">
+        <img src="https://misswood.eu/cdn/shop/articles/7-marcas-handmade-que-te-van-a-chiflar-285653.jpg?v=1596548782"
+          alt="Handmade">
+        <div class="card-body">
+          <strong>Handmade</strong>
+          <p>Handmade items are made by people using their hands rather than only machines.</p>
+          <a href="https://en.wikipedia.org/wiki/Handmade" target="_blank">Read more →</a>
+        </div>
+      </div>
+      <!-- card 6 -->
+      <div class="card">
+        <img
+          src="https://www.wikihow.com/images/thumb/2/29/Learn-to-Play-an-Instrument-Step-1-Version-5.jpg/v4-460px-Learn-to-Play-an-Instrument-Step-1-Version-5.jpg"
+          alt="Play instrument">
+        <div class="card-body">
+          <strong>Play an instrument</strong>
+          <p>Playing an instrument gives enjoyment, creative expression, and cognitive benefits.</p>
+          <a href="https://petersonfamilyfoundation.org/wp-content/uploads/2016/08/48230012_ml.jpg" target="_blank">Read
+            more →</a>
+        </div>
+      </div>
+      <!-- card 7 -->
+      <div class="card">
+        <img src="https://chefiq.com/cdn/shop/articles/blog-post-thumb_gourmethome.png?v=1707774097" alt="Cooking">
+        <div class="card-body">
+          <strong>Cooking</strong>
+          <p>Cooking is the art and science of using heat to make food palatable and safe.</p>
+          <a href="https://en.wikipedia.org/wiki/Cooking" target="_blank">Read more →</a>
+        </div>
+      </div>
+    </div>
+
+  <!-- Hobby Section -->
+  <section class="hobby-section">
+    <h2>My Hobby</h2>
+  
+    <div class="hobby-item">
+      <img src="images/photo_rtyjpeg.jpeg" alt="More dancing">
+      <p>
+        I also like to experiment with choreography, learning new styles, and performing in front of friends. Dancing
+        helps
+        me stay active, creative, and express myself in ways words cannot describe.
+      </p>
+      </div>
+  
+    <div class="hobby-item">
+    <img src="images/photo_qwe.jpeg" alt="Drawing hobby">
+    <p>
+      I've known dancing for a long time, but it never seemed to fade. When I was 2 years old, I was dancing hip-hop
+      style,
+      it was just for fun. But now, after I started liking K-pop music, I started to really watch them and their
+      movements,
+      animate and repeat them, and I liked it, so I decided to go dancing. I like that I can control my body and how
+      smoothly or quickly I can dance.
+    </p>
+    </div>
+  </section>
+  
+  <style>
+    .hobby-section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+  
+    .hobby-section h2 {
+      margin-top: 0;
+      color: #8994b9;
+    }
+  
+    .hobby-item {
+      margin-bottom: 20px;
+    }
+  
+    .hobby-item img {
+      max-width: 100%;
+      height: 200px;
+      /* менша висота */
+      border-radius: 10px;
+      display: block;
+      margin-bottom: 12px;
+      object-fit: cover;
+    }
+  
+    .hobby-item p {
+      font-size: 16px;
+      line-height: 1.5;
+      color: #333;
+    }
+  </style>
+
+
+  <script>
+    const button = document.getElementById('searchButton');
+    const input = document.getElementById('userInput');
+    const clearButton = document.getElementById('clearButton');
+
+    button.addEventListener('click', function () {
+      const q = (input.value || '').trim();
+      if (q) {
+        const url = 'https://www.google.com/search?q=' + encodeURIComponent(q);
+        window.open(url, '_blank');
+      }
+    });
+
+    clearButton.addEventListener('click', function () {
+      input.value = '';
+      input.focus();
+    });
+  </script>
+
+</body>
+</html>
